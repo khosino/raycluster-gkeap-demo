@@ -1,16 +1,31 @@
-#Ray Cluster on GKE Autopilot 
+# Ray Cluster on GKE Autopilot 
 
 Hands-on tutorial of Ray on Google Kubernetes Engine Autopilot
 
 
-## 1. Setup GCP resources
+## 1. Setup Google Cloud Storage for terraform state
 
-`code/` is simple implmentation of Ape-X for `CartPole-v1` env.
+
+
+set environment variable from `.env`.
+```
+vi .env
+```
 
 ```
-#: Run on local machine
-pip install -f requirements.txt
-python main.py --num-actors=4 --logdir=log
+PROJECT_ID="{YOUR PROJECT ID}"
+REGION="asia-northeast1"
+ZONE="asia-northeast1-a"
+```
+
+```
+source .env
+```
+
+Create Google Cloud Storage Bucket
+
+```
+gsutil mb -l $REGION gs://$PROJECT_ID-terraform-state
 ```
 
 <br>
