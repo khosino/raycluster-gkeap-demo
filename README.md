@@ -15,6 +15,19 @@ KubeRay is an open source toolkit to run Ray applications on Kubernetes. It prov
 ## 1. Setup Google Cloud Storage for terraform state
 #### Prepare the Storage to store tfstate file
 
+enable APIs
+```
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable iam.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable serviceusage.googleapis.com
+gcloud services enable container.googleapis.com
+gcloud services enable pubsub.googleapis.com
+gcloud services enable storage-component.googleapis.com
+gcloud services enable artifactregistry.googleapis.com
+gcloud services enable cloudbuild.googleapis.com
+```
+
 set environment variable from `.env`.
 ```
 $cd raycluster-gkeap-demo
