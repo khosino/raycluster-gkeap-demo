@@ -42,7 +42,7 @@ Apply terraform
 ```
 $cd terraform
 $terraform init
-$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME
+$terraform apply -var=project_id=$PROJECT_ID -var=region=$REGION -var=zone=$ZONE -var=cluster_name=$CLUSTER_NAME -var=repo_name=$REPOSITRY_NAME
 ```
 <br>
 
@@ -58,24 +58,27 @@ $kubectl get node
 ```
 
 ## 4. Deploy Kuberay
-#### Follow Kuberay github
-[https://github.com/ray-project/kuberay.git](https://github.com/ray-project/kuberay/tree/master/ray-operator)
+#### Follow Tutorial
+[Building a Machine Learning Platform with Kubeflow and Ray on Google Kubernetes Engine](https://cloud.google.com/blog/products/ai-machine-learning/build-a-ml-platform-with-kubeflow-and-ray-on-gke)
 
+In this tutorial, [Ray-project/Kuberay](https://github.com/ray-project/kuberay) is used.
+
+### Deploy KubeRay Operator
 ```
-$cd ..
-$kubectl create -k kuberay/ray-operator/config/default
+$export KUBERAY_VERSION=v0.3.0
+$kubectl create -k "github.com/ray-project/kuberay/manifests/cluster-scope-resources?ref=${KUBERAY_VERSION}"
+$kubectl apply -k "github.com/ray-project/kuberay/manifests/base?ref=${KUBERAY_VERSION}"
 ```
 Check
 ```
-$kubectl get deployments -n ray-system
-NAME               READY   UP-TO-DATE   AVAILABLE   AGE
-kuberay-operator   1/1     1            1           2m35s
-
-$kubectl get pods -n ray-system
+$kubectl get po -n ray-system
 NAME                                READY   STATUS    RESTARTS   AGE
-kuberay-operator-68c7b998b8-4pf62   1/1     Running   0          2m49s
+kuberay-apiserver-dc85f4b56-4wttq   1/1     Running   0          48s
+kuberay-operator-76576694b4-7p9wx   1/1     Running   0          48s
 ```
-Deploy sample code
-```
-kubectl create -f kuberay/ray-operator/config/samples/ray-cluster.heterogeneous.yaml
-```
+
+### Creating Your Kubeflow User Profile
+
+
+
+
