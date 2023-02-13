@@ -13,9 +13,7 @@ variable "zone" {
     type        = string
 }
 
-variable "bigquery_dataset" {
-    description = "The BigQuery Dataset Name"
+variable "cluster_name" {
+    description = "The GKE Cluster name"
     type        = string
 }
-
-

@@ -1,6 +1,6 @@
 terraform {
  backend "gcs" {
-   bucket  = "raycluster-demo-terraform-state"
+   bucket  = "hclsj-raycluster-demo-tarraform-state"
    prefix  = "terraform/state"
  }
 }

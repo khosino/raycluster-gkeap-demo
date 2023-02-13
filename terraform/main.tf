@@ -3,10 +3,6 @@ terraform {
   required_providers {
     google = "~> 4.15"
   }
-#    backend "gcs" {
-#    bucket  = "PROJECT_ID-tf-state"
-#    prefix  = "af-demo"
-#  }
 }
 
 provider "google" {
