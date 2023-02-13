@@ -17,3 +17,8 @@ variable "cluster_name" {
     description = "The GKE Cluster name"
     type        = string
 }
+
+variable "repo_name" {
+    description = "The Repositry name"
+    type        = string
+}
