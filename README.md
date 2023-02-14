@@ -70,27 +70,15 @@ test the kubectl command
 $kubectl get node
 ```
 
-## 4. Deploy Kuberay
-#### Follow Tutorial
+## 4. Deploy Pods
+<!-- #### Follow Tutorial
 [Building a Machine Learning Platform with Kubeflow and Ray on Google Kubernetes Engine](https://cloud.google.com/blog/products/ai-machine-learning/build-a-ml-platform-with-kubeflow-and-ray-on-gke)
 
 In this tutorial, [Ray-project/Kuberay](https://github.com/ray-project/kuberay) is used.
 
-### Deploy KubeRay Operator
-```
-$export KUBERAY_VERSION=v0.3.0
-$kubectl create -k "github.com/ray-project/kuberay/manifests/cluster-scope-resources?ref=${KUBERAY_VERSION}"
-$kubectl apply -k "github.com/ray-project/kuberay/manifests/base?ref=${KUBERAY_VERSION}"
-```
-Check
-```
-$kubectl get po -n ray-system
-NAME                                READY   STATUS    RESTARTS   AGE
-kuberay-apiserver-dc85f4b56-4wttq   1/1     Running   0          48s
-kuberay-operator-76576694b4-7p9wx   1/1     Running   0          48s
-```
+### Deploy KubeRay Operator -->
+[Use this sample code](https://github.com/horoiwa/deep_reinforcement_learning_gallery/tree/master/DistRL_on_k8s)
 
-### Creating Your Kubeflow User Profile
 
 
 
