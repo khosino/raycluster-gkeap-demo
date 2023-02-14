@@ -6,8 +6,9 @@ resource "google_container_cluster" "gkeap" {
   location = "asia-northeast1"
 
   release_channel {
-    channel = "STABLE"
+    channel = "REGULAR"
   }
+  min_master_version = "1.24.8-gke.2000"
 
   networking_mode = "VPC_NATIVE"
   ip_allocation_policy {
@@ -20,6 +21,13 @@ resource "google_container_cluster" "gkeap" {
 
   vertical_pod_autoscaling {
     enabled = true
+  }
+
+  node_config {
+    service_account = google_service_account.gke_sa.email
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ]
   }
 
 #   private_cluster_config {

@@ -22,3 +22,15 @@ variable "repo_name" {
     description = "The Repositry name"
     type        = string
 }
+
+variable "gke_sa_roles" {
+  description = "The roles to assign to the GKE service acount"
+  default = [
+    "editor"
+  ]
+}
+
+variable "gke_sa_name" {
+    description = "The Repositry name"
+    default = "gke-sa"
+}

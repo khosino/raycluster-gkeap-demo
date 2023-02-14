@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+    - name: nginx-container
+      #image: nginx
+      image: asia-northeast1-docker.pkg.dev/hclsj-raycluster-demo/ray-cluster-repo/sample-image:latest
+      ports:
+      - containerPort: 80

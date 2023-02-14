@@ -46,7 +46,7 @@ spec:
     cloud.google.com/gke-accelerator: nvidia-tesla-t4
   containers:
   - name: ray-master
-    image: RAY_DOCKER_IMAGE
+    image: asia-northeast1-docker.pkg.dev/hclsj-raycluster-demo/ray-cluster-repo/sample-image:latest
     command: ["/bin/sh", "-c"]
     args:
       - |
@@ -132,7 +132,7 @@ spec:
     spec:
       containers:
       - name: ray-cpu-actor
-        image: RAY_DOCKER_IMAGE
+        image: asia-northeast1-docker.pkg.dev/hclsj-raycluster-demo/ray-cluster-repo/sample-image:latest
         command: ["/bin/sh", "-c"]
         args:
           - |
