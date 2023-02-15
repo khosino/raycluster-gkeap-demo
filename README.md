@@ -33,6 +33,8 @@ $vi .env
 PROJECT_ID="{YOUR PROJECT ID}"
 REGION="asia-northeast1"
 ZONE="asia-northeast1-a"
+CLUSTER_NAME="ray-cluster-autopilot"
+REPOSITRY_NAME="ray-cluster-repo"
 ```
 
 ```
