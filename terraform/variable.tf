@@ -30,6 +30,13 @@ variable "gke_sa_roles" {
   ]
 }
 
+variable "default_sa_roles" {
+  description = "The roles to assign to the Default service acount"
+  default = [
+    "editor"
+  ]
+}
+
 variable "gke_sa_name" {
     description = "The Repositry name"
     default = "gke-sa"
