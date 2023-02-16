@@ -7,7 +7,6 @@ Hands-on tutorial of Ray on Google Kubernetes Engine Autopilot
 ```
 $mkdir ray-cluster-demo; cd $_
 $git clone https://github.com/khosino/raycluster-gkeap-demo.git
-$git clone https://github.com/ray-project/kuberay.git
 ```
 KubeRay is an open source toolkit to run Ray applications on Kubernetes. It provides several tools to simplify managing Ray clusters on Kubernetes.
 
