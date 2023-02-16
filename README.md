@@ -1,14 +1,13 @@
 # Ray Cluster on GKE Autopilot 
 
 Hands-on tutorial of Ray on Google Kubernetes Engine Autopilot
-## 0. Clone resouces
+## 0. Clone this repo
 #### Prepare resources
 
 ```
 $mkdir ray-cluster-demo; cd $_
 $git clone https://github.com/khosino/raycluster-gkeap-demo.git
 ```
-KubeRay is an open source toolkit to run Ray applications on Kubernetes. It provides several tools to simplify managing Ray clusters on Kubernetes.
 
 
 ## 1. Setup Google Cloud Storage for terraform state
